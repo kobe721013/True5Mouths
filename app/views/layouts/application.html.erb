@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>True5Mouths</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render "common/navbar" %>
+<%= notice_message %>
+<%= yield %> <!--會把view/drinks/index.html.erb秀出來-->
+<%= render "common/footer" %>
+</body>
+</html>

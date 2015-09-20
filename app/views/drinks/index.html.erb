@@ -1,0 +1,33 @@
+<h1>Hello World!</h1>
+
+<div class="col-md-12">
+  <div class="drink">
+    <!--new_drink_path means URL locolhost:3000/drinks/new -->
+    <%= link_to("New drink", new_drink_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Drink</td>
+	<td>Price</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @drinks.each do |drink| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(drink.title, drink_path(drink)) %></td>
+          <td><%= drink.price %></td>
+          <td><%= drink.description %></td>
+          <td>
+              <%= link_to("Edit", edit_drink_path(drink), class: "btn btn-sm btn-default")%>
+              <%= link_to("Delete", drink_path(drink),    class: "btn btn-sm btn-default", 
+                          method: :delete, data: { confirm: "Are you sure?" } )%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
