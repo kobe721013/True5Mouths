@@ -1,7 +1,6 @@
-<h1>Hello World!</h1>
 
 <div class="col-md-12">
-  <div class="drink">
+  <div class="group">
     <!--new_drink_path means URL locolhost:3000/drinks/new -->
     <%= link_to("New drink", new_drink_path, class: "btn btn-primary pull-right") %>
   </div>
@@ -18,7 +17,7 @@
       <% @drinks.each do |drink| %>
         <tr>
           <td>#</td>
-          <td><%= link_to(drink.title, drink_path(drink)) %></td>
+          <td><%= link_to(drink.name, drink_path(drink)) %></td>
           <td><%= drink.price %></td>
           <td><%= drink.description %></td>
           <td>

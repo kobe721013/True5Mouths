@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 	root 'drinks#index'#means that localhost:3000/groups was index page
-	resources :drinks # kobe does not know what means?, rails used new_drink_path in view html page, if no resources, the error message will show 'undefined local variable or method `new_drink_path'' 
+
+	
+	resources :drinks do # kobe does not know what means?, rails used new_drink_path in view html page, if no resources, the error message will show 'undefined local variable or method `new_drink_path'' 
+		resources :posts #create drink and post two table relationship
+	end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
