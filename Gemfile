@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 #install gems by kobe
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'log4r','1.1.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

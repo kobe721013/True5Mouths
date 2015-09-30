@@ -1,14 +1,25 @@
+require 'logger'
 class DrinksController < ApplicationController
-	def index
-		#flash[:notice]="Hi kobe, this is a notice msg!!!"
-		@drinks = Drink.all
-	end
+	#logger = Logger.new(STDOUT)
+	#logger.level = Logger::WARN
+	#logger.datetime_format = "%Y-%m-%d %H:%M:S"
+ def index
+
+	logger.debug {"test msg, hahahahha...testing..."}
+	#flash[:notice]="Hi kobe, this is a notice msg!!!"
+	@drinks = Drink.all
+ end
  def show
 	puts params
 	mylog("show detail")
 	@drink = Drink.find(params[:id])
 	@posts = @drink.posts
 
+	if @posts.length == 0 then
+		mylog("not data")
+	else
+		mylog("got data")
+	end 
  end
 
  def new
